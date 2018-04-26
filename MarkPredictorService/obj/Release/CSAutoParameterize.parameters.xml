@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="MarkPeredictorConnectionString-Web.config Connection String" description="MarkPeredictorConnectionString Connection String used in web.config by the application to access the database." defaultValue="Server=localhost\development;Database=MarkPredictor;User ID=spotme;Password=spotme;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="G:\\Masters\\Semester1\\EnterpriceDevelopment\\MarkPredictorService\\MarkPredictorService\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='MarkPeredictorConnectionString']/@connectionString" />
+  </parameter>
+</parameters>

@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarkPredictorService", "MarkPredictorService\MarkPredictorService.csproj", "{4AECBB19-E164-486C-BCF0-F9A926623E00}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "MarkPredictorService.Shared", "MarkPredictorService.Shared\MarkPredictorService.Shared.shproj", "{F6E58705-FA64-4762-B1EA-A595BDA5DBA9}"
+EndProject
+Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		MarkPredictorService.Shared\MarkPredictorService.Shared.projitems*{4aecbb19-e164-486c-bcf0-f9a926623e00}*SharedItemsImports = 4
+		MarkPredictorService.Shared\MarkPredictorService.Shared.projitems*{f6e58705-fa64-4762-b1ea-a595bda5dba9}*SharedItemsImports = 13
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4AECBB19-E164-486C-BCF0-F9A926623E00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AECBB19-E164-486C-BCF0-F9A926623E00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AECBB19-E164-486C-BCF0-F9A926623E00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AECBB19-E164-486C-BCF0-F9A926623E00}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
