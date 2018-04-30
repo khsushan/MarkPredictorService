@@ -2,6 +2,7 @@
 using MarkPredictor.Shared;
 using MarkPredictor.Shared.Models;
 using MarkPredictorService.Common;
+using MarkPredictorService.Services;
 using System;
 using System.ServiceModel;
 using System.ServiceModel.Description;
@@ -11,19 +12,29 @@ namespace MarkPredictorService.App_Code
 {
     public class Programme
     {
+        private const string BASE_URL = "http://localhost:9000/";
+
         public static void AppInitialize()
         {
-            WebServiceHost host = new WebServiceHost(typeof(Service), new Uri("http://localhost:9000/"));
-            ServiceEndpoint ep = host.AddServiceEndpoint(typeof(IService), new WebHttpBinding(), "");
-            ServiceDebugBehavior sdb = host.Description.Behaviors.Find<ServiceDebugBehavior>();
+            WebServiceHost hostLevel = new WebServiceHost(typeof(Service), new Uri(BASE_URL));
+            ServiceEndpoint levelServiceEndpoint = hostLevel.AddServiceEndpoint(typeof(IService), new WebHttpBinding(), "levels/");
+            WebServiceHost hostModule = new WebServiceHost(typeof(ModuleService), new Uri(BASE_URL));
+            ServiceEndpoint moduleServiceEndpoint = hostModule.AddServiceEndpoint(typeof(IModuleService), new WebHttpBinding(), "modules/");
+            WebServiceHost hostAssessment = new WebServiceHost(typeof(AssessmentService), new Uri(BASE_URL));
+            ServiceEndpoint assessmentServiceEndpoint = hostAssessment.AddServiceEndpoint(typeof(IAssessmentService), new WebHttpBinding(), "assessments/");
+            ServiceDebugBehavior sdb = hostLevel.Description.Behaviors.Find<ServiceDebugBehavior>();
             sdb.HttpHelpPageEnabled = false;
-            host.Open();
+            hostLevel.Open();
+            hostModule.Open();
+            hostAssessment.Open();
             Console.WriteLine("Service is up and running");
             Console.WriteLine("Press enter to quit ");
             ConfigAutofac();
             Common.AutoMapper.Initialize();
             Console.ReadLine();
-            host.Close();
+            hostLevel.Close();
+            hostModule.Close();
+            hostAssessment.Close();
            
 
         }

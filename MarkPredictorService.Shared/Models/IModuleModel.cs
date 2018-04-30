@@ -7,6 +7,6 @@ namespace MarkPredictor.Shared.Models
 {
     public interface IModuleModel
     {
-        Module Save();
+        Module Save(Module module);
     }
 }

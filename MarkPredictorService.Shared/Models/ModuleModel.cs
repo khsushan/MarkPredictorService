@@ -23,15 +23,8 @@ namespace MarkPredictor.Shared.Models
 
         public double Credit { get;  set;}
 
-        public Module Save()
+        public Module Save(Module module)
         {
-            Module module = new Module
-            {
-                ModuleName = ModuleName,
-                CourseId = CourseId,
-                LevelId = LevelId,
-                Credit = Credit
-            };
             _markPredictorDbContext.Module.Add(module);
            _markPredictorDbContext.SaveChanges();
             _markPredictorDbContext.Entry(module).State = System.Data.Entity.EntityState.Detached;

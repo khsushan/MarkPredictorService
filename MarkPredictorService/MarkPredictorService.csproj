@@ -86,6 +86,10 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -107,17 +111,27 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Service.svc" />
+    <Content Include="Services\AssessmentService.svc" />
+    <Content Include="Services\ModuleService.svc" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Services\AssessmentService.svc.cs">
+      <DependentUpon>AssessmentService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Services\IAssessmentService.cs" />
+    <Compile Include="Services\IModuleService.cs" />
+    <Compile Include="Services\ModuleService.svc.cs">
+      <DependentUpon>ModuleService.svc</DependentUpon>
+    </Compile>
     <Content Include="App_Code\Programme.cs" />
     <Compile Include="Common\AutoMapper.cs" />
     <Compile Include="Common\InstanceFactory.cs" />
-    <Compile Include="Dto\AssessmentDto.cs" />
-    <Compile Include="Dto\LevelDto.cs" />
-    <Compile Include="Dto\ModuleDto.cs" />
+    <Compile Include="ApiModels\AssessmentApiModel.cs" />
+    <Compile Include="ApiModels\LevelApiModel.cs" />
+    <Compile Include="ApiModels\ModuleApiModel.cs" />
     <Compile Include="Migrations\201804101220439_InitialCreate.cs" />
     <Compile Include="Migrations\201804101220439_InitialCreate.Designer.cs">
       <DependentUpon>201804101220439_InitialCreate.cs</DependentUpon>

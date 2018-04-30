@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using MarkPredictor.Shared.Entites;
-using MarkPredictorService.Dto;
+using MarkPredictorService.ApiModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,12 +17,12 @@ namespace MarkPredictorService.Common
             {
                 Mapper.Initialize(cfg =>
                 {
-                    cfg.CreateMap<Module, ModuleDto>();
-                    cfg.CreateMap<ModuleDto, Module>();
-                    cfg.CreateMap<Assessment, AssessmentDto>();
-                    cfg.CreateMap<AssessmentDto, Assessment>();
-                    cfg.CreateMap<Level, LevelDto>();
-                    cfg.CreateMap<LevelDto, Level>();
+                    cfg.CreateMap<Module, ModuleApiModel>();
+                    cfg.CreateMap<ModuleApiModel, Module>();
+                    cfg.CreateMap<Assessment, AssessmentApiModel>();
+                    cfg.CreateMap<AssessmentApiModel, Assessment>();
+                    cfg.CreateMap<Level, LevelApiModel>();
+                    cfg.CreateMap<LevelApiModel, Level>();
                 });
                 _isInitialized = true;
             }

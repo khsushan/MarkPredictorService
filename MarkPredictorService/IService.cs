@@ -1,4 +1,4 @@
-﻿using MarkPredictorService.Dto;
+﻿using MarkPredictorService.ApiModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,17 +13,13 @@ namespace MarkPredictorService
     [ServiceContract]
     public interface IService
     {
+        [OperationContract]
+        [WebGet( ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Wrapped, UriTemplate = "{levelId}")]
+        LevelApiModel GetLevelDetails(string levelId);
 
         [OperationContract]
-        AssessmentDto AddAssesment(AssessmentDto assementDto);
-
-        [OperationContract]
-        [WebGet( ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Wrapped, UriTemplate = "level/{levelId}")]
-        LevelDto GetLevelDetails(string levelId);
-
-        [OperationContract]
-        [WebGet(ResponseFormat = WebMessageFormat.Json, UriTemplate = "test")]
-        string Test();
+        [WebInvoke(UriTemplate = "update", Method = "PUT", ResponseFormat = WebMessageFormat.Json, RequestFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Wrapped)]
+        LevelApiModel Update(LevelApiModel level);
 
         // TODO: Add your service operations here
     }

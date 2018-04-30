@@ -1,10 +1,10 @@
 ﻿using MarkPredictor.Shared.Enum;
 using System.Runtime.Serialization;
 
-namespace MarkPredictorService.Dto
+namespace MarkPredictorService.ApiModels
 {
     [DataContract]
-    public class AssessmentDto
+    public class AssessmentApiModel
     {
         [DataMember]
         public long Id { get; set; }

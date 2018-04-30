@@ -5,9 +5,11 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
-using MarkPredictorService.Dto;
+using MarkPredictorService.ApiModels;
 using MarkPredictorService.Common;
 using AutoMapper;
+using MarkPredictor.Shared.Entites;
+using System.Threading.Tasks;
 
 namespace MarkPredictorService
 {
@@ -15,20 +17,25 @@ namespace MarkPredictorService
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class Service : IService
     {
-        public AssessmentDto AddAssesment(AssessmentDto assementDto)
-        {
-            return assementDto;
-        }
-
-        public LevelDto GetLevelDetails(string levelId)
+        public LevelApiModel GetLevelDetails(string levelId)
         {
           var levelModel = InstanceFactory.GetLevelModelInstance();
-          return  Mapper.Map<LevelDto>(levelModel.GetLevel(long.Parse(levelId)));
+          return  Mapper.Map<LevelApiModel>(levelModel.GetLevel(long.Parse(levelId)));
         }
 
-        public string Test()
+        public LevelApiModel Update(LevelApiModel level)
         {
-            return "Hello";
+            var levelModel = InstanceFactory.GetLevelModelInstance();
+            try
+            {
+                var updatedLevel = levelModel.SaveLevel(Mapper.Map<Level>(level));
+                return Mapper.Map<LevelApiModel>(updatedLevel);
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            
         }
     }
 }

@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="MarkPredictorService.Services.AssessmentService" CodeBehind="AssessmentService.svc.cs" %>

@@ -1,11 +1,16 @@
 ﻿using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 
-namespace MarkPredictorService.Dto
+namespace MarkPredictorService.ApiModels
 {
     [DataContract]
-    public class ModuleDto
+    public class ModuleApiModel
     {
+        public ModuleApiModel()
+        {
+
+        }
+
         [DataMember]
         public long Id { get; set; }
 
@@ -22,7 +27,7 @@ namespace MarkPredictorService.Dto
         public double Credit { get; set; }
 
         [DataMember]
-        public ObservableCollection<AssessmentDto> Assessments { get; set; }
+        public ObservableCollection<AssessmentApiModel> Assessments { get; set; }
 
         [DataMember]
         public double ModuleAverage { get; set; }

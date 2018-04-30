@@ -5,10 +5,10 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MarkPredictorService.Dto
+namespace MarkPredictorService.ApiModels
 {
     [DataContract]
-    public class LevelDto
+    public class LevelApiModel
     {
         [DataMember]
         public long Id { get; set; }
@@ -20,6 +20,6 @@ namespace MarkPredictorService.Dto
         public double Average { get; set; }
 
         [DataMember]
-        public IList<ModuleDto> Modules { get; set; }
+        public IList<ModuleApiModel> Modules { get; set; }
     }
 }
