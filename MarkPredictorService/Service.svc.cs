@@ -17,10 +17,10 @@ namespace MarkPredictorService
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class Service : IService
     {
-        public LevelApiModel GetLevelDetails(string levelId)
+        public LevelApiModel GetLevelDetails(string levelId, string courseId)
         {
           var levelModel = InstanceFactory.GetLevelModelInstance();
-          return  Mapper.Map<LevelApiModel>(levelModel.GetLevel(long.Parse(levelId)));
+          return  Mapper.Map<LevelApiModel>(levelModel.GetLevel(long.Parse(levelId), long.Parse(courseId)));
         }
 
         public LevelApiModel Update(LevelApiModel level)

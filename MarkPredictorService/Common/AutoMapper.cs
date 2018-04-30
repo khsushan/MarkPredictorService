@@ -23,6 +23,8 @@ namespace MarkPredictorService.Common
                     cfg.CreateMap<AssessmentApiModel, Assessment>();
                     cfg.CreateMap<Level, LevelApiModel>();
                     cfg.CreateMap<LevelApiModel, Level>();
+                    cfg.CreateMap<StudentApiModel, Student>();
+                    cfg.CreateMap<Student, StudentApiModel>();
                 });
                 _isInitialized = true;
             }

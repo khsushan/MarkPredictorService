@@ -1,11 +1,6 @@
 ﻿using MarkPredictorService.ApiModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
-using System.Text;
 
 namespace MarkPredictorService.Services
 {
@@ -14,7 +9,7 @@ namespace MarkPredictorService.Services
     public interface IAssessmentService
     {
         [OperationContract]
-        [WebInvoke(UriTemplate = "add", Method = "POST", ResponseFormat = WebMessageFormat.Json, RequestFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Wrapped)]
+        [WebInvoke(UriTemplate = "add", Method = "POST", ResponseFormat = WebMessageFormat.Json, RequestFormat = WebMessageFormat.Json)]
         AssessmentApiModel AddAssessment(AssessmentApiModel assessment);
     }
 }

@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
+using System.Web;
 
-namespace MarkPredictor.Shared.Entites
+namespace MarkPredictorService.ApiModels
 {
-    public class Student
+    public class StudentApiModel
     {
         public long Id { get; set; }
 
@@ -13,7 +14,5 @@ namespace MarkPredictor.Shared.Entites
         public string Password { get; set; }
 
         public long CourseId { get; set; }
-
-        public Course Course { get; set; }
     }
 }

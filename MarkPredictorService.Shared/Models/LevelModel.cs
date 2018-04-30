@@ -16,9 +16,17 @@ namespace MarkPredictor.Shared.Models
             _markPredictorDbContext = markPredictorDbContext;
         }
 
-        public Level GetLevel(long levelId)
+        public Level GetLevel(long levelId, long courseId)
         {
-           return  _markPredictorDbContext.Level.Where(l => l.Id == levelId).Include(l => l.Modules).Include(x => x.Modules.Select(y => y.Assessments)).AsNoTracking().FirstOrDefault();
+            var result = from level in _markPredictorDbContext.Level
+                         join module in _markPredictorDbContext.Module
+                         on level.Id equals module.LevelId
+                         join assessment in _markPredictorDbContext.Assessment
+                         on module.Id equals assessment.ModuleId
+                         where module.CourseId == courseId && level.Id ==  levelId
+                         select level;
+
+           return  result.Include(l => l.Modules).Include(x => x.Modules.Select(y => y.Assessments)).AsNoTracking().FirstOrDefault();
         }
 
         public Level SaveLevel(Level level)

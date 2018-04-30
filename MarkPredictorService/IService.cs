@@ -14,11 +14,11 @@ namespace MarkPredictorService
     public interface IService
     {
         [OperationContract]
-        [WebGet( ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Wrapped, UriTemplate = "{levelId}")]
-        LevelApiModel GetLevelDetails(string levelId);
+        [WebGet( ResponseFormat = WebMessageFormat.Json, UriTemplate = "{levelId}/course/{courseId}")]
+        LevelApiModel GetLevelDetails(string levelId, string courseId);
 
         [OperationContract]
-        [WebInvoke(UriTemplate = "update", Method = "PUT", ResponseFormat = WebMessageFormat.Json, RequestFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Wrapped)]
+        [WebInvoke(UriTemplate = "update", Method = "PUT", ResponseFormat = WebMessageFormat.Json, RequestFormat = WebMessageFormat.Json)]
         LevelApiModel Update(LevelApiModel level);
 
         // TODO: Add your service operations here

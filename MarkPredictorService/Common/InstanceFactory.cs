@@ -25,5 +25,10 @@ namespace MarkPredictorService.Common
         {
             return Container.Resolve<AssessmentModel>();
         }
+
+        public static StudentModel GetStudentModel()
+        {
+            return Container.Resolve<StudentModel>();
+        }
     }
 }

@@ -33,3 +33,4 @@ G:\Masters\Semester1\EnterpriceDevelopment\MarkPredictorService\MarkPredictorSer
 G:\Masters\Semester1\EnterpriceDevelopment\MarkPredictorService\MarkPredictorService\obj\Debug\MarkPredictorService.csprojResolveAssemblyReference.cache
 G:\Masters\Semester1\EnterpriceDevelopment\MarkPredictorService\MarkPredictorService\bin\Newtonsoft.Json.dll
 G:\Masters\Semester1\EnterpriceDevelopment\MarkPredictorService\MarkPredictorService\bin\Newtonsoft.Json.xml
+G:\Masters\Semester1\EnterpriceDevelopment\MarkPredictorService\MarkPredictorService\obj\Debug\MarkPredictor.Migrations.AddingcourseIdtostudenttable.resources

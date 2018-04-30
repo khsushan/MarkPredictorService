@@ -111,6 +111,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Service.svc" />
+    <Content Include="Services\AccountService.svc" />
     <Content Include="Services\AssessmentService.svc" />
     <Content Include="Services\ModuleService.svc" />
     <Content Include="Web.config">
@@ -118,9 +119,18 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApiModels\StudentApiModel.cs" />
+    <Compile Include="Migrations\201804301104399_Adding courseId to student table.cs" />
+    <Compile Include="Migrations\201804301104399_Adding courseId to student table.Designer.cs">
+      <DependentUpon>201804301104399_Adding courseId to student table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Services\AccountService.svc.cs">
+      <DependentUpon>AccountService.svc</DependentUpon>
+    </Compile>
     <Compile Include="Services\AssessmentService.svc.cs">
       <DependentUpon>AssessmentService.svc</DependentUpon>
     </Compile>
+    <Compile Include="Services\IAccountService.cs" />
     <Compile Include="Services\IAssessmentService.cs" />
     <Compile Include="Services\IModuleService.cs" />
     <Compile Include="Services\ModuleService.svc.cs">
@@ -190,6 +200,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201804161503178_AddingModuleIdColumntoAssessment.resx">
       <DependentUpon>201804161503178_AddingModuleIdColumntoAssessment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804301104399_Adding courseId to student table.resx">
+      <DependentUpon>201804301104399_Adding courseId to student table.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

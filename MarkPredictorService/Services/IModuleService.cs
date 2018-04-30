@@ -10,7 +10,7 @@ namespace MarkPredictorService.Services
     public interface IModuleService
     {
         [OperationContract]
-        [WebInvoke(UriTemplate = "add", Method = "POST", ResponseFormat = WebMessageFormat.Json, RequestFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Wrapped)]
+        [WebInvoke(UriTemplate = "add", Method = "POST", ResponseFormat = WebMessageFormat.Json, RequestFormat = WebMessageFormat.Json)]
         [OnDeserialized]
         ModuleApiModel AddModule(ModuleApiModel moduleDto);
     }

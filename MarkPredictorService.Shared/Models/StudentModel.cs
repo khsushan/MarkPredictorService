@@ -4,7 +4,11 @@ using System.Text;
 
 namespace MarkPredictor.Shared.Models
 {
-    class Student
+    public class Student
     {
+        public bool Login(Student student)
+        {
+
+        }
     }
 }

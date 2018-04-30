@@ -22,11 +22,14 @@ namespace MarkPredictorService.App_Code
             ServiceEndpoint moduleServiceEndpoint = hostModule.AddServiceEndpoint(typeof(IModuleService), new WebHttpBinding(), "modules/");
             WebServiceHost hostAssessment = new WebServiceHost(typeof(AssessmentService), new Uri(BASE_URL));
             ServiceEndpoint assessmentServiceEndpoint = hostAssessment.AddServiceEndpoint(typeof(IAssessmentService), new WebHttpBinding(), "assessments/");
+            WebServiceHost hostAccount = new WebServiceHost(typeof(AccountService), new Uri(BASE_URL));
+            ServiceEndpoint accountServiceEndpoint = hostAccount.AddServiceEndpoint(typeof(IAccountService), new WebHttpBinding(), "accounts/");
             ServiceDebugBehavior sdb = hostLevel.Description.Behaviors.Find<ServiceDebugBehavior>();
             sdb.HttpHelpPageEnabled = false;
             hostLevel.Open();
             hostModule.Open();
             hostAssessment.Open();
+            hostAccount.Open();
             Console.WriteLine("Service is up and running");
             Console.WriteLine("Press enter to quit ");
             ConfigAutofac();
@@ -35,6 +38,7 @@ namespace MarkPredictorService.App_Code
             hostLevel.Close();
             hostModule.Close();
             hostAssessment.Close();
+            hostAccount.Close();
            
 
         }
@@ -46,6 +50,7 @@ namespace MarkPredictorService.App_Code
             builder.RegisterType<ModuleModel>();
             builder.RegisterType<LevelModel>();
             builder.RegisterType<AssessmentModel>();
+             builder.RegisterType<StudentModel>();
             InstanceFactory.Container = builder.Build();
         }
     }

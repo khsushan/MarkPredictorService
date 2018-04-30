@@ -23,6 +23,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\IModuleModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\LevelModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\ModuleModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Models\StudentModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\StudentModels.cs" />
   </ItemGroup>
 </Project>
