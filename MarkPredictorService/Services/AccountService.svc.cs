@@ -34,7 +34,15 @@ namespace MarkPredictorService.Services
 
         public int Register(StudentApiModel studentApiModel)
         {
-            return _studentModel.AddStudent(Mapper.Map<Student>(studentApiModel));
+            try
+            {
+                return _studentModel.AddStudent(Mapper.Map<Student>(studentApiModel));
+            }
+            catch (Exception ex)
+            {
+                return 0;
+            }
+           
         }
     }
 }

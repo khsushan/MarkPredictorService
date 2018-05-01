@@ -20,7 +20,16 @@ namespace MarkPredictorService
         public LevelApiModel GetLevelDetails(string levelId, string courseId)
         {
           var levelModel = InstanceFactory.GetLevelModelInstance();
-          return  Mapper.Map<LevelApiModel>(levelModel.GetLevel(long.Parse(levelId), long.Parse(courseId)));
+            try
+            {
+                var levelEntity = levelModel.GetLevel(long.Parse(levelId), long.Parse(courseId));
+                return Mapper.Map<LevelApiModel>(levelEntity);
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+         
         }
 
         public LevelApiModel Update(LevelApiModel level)

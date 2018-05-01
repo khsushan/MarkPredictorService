@@ -1,6 +1,7 @@
 ﻿using MarkPredictor.Shared.Entites;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Data.Entity;
 using System.Linq;
 using System.Text;
@@ -18,15 +19,13 @@ namespace MarkPredictor.Shared.Models
 
         public Level GetLevel(long levelId, long courseId)
         {
-            var result = from level in _markPredictorDbContext.Level
-                         join module in _markPredictorDbContext.Module
-                         on level.Id equals module.LevelId
-                         join assessment in _markPredictorDbContext.Assessment
-                         on module.Id equals assessment.ModuleId
-                         where module.CourseId == courseId && level.Id ==  levelId
-                         select level;
-
-           return  result.Include(l => l.Modules).Include(x => x.Modules.Select(y => y.Assessments)).AsNoTracking().FirstOrDefault();
+            return _markPredictorDbContext.Level.Include(l => l.Modules).Include(l => l.Modules.Select(a => a.Assessments)).Where(l => l.Id == levelId).ToList().Select(
+                l => new Level
+                {
+                    Id = l.Id,
+                    LevelName = l.LevelName,
+                    Modules = new Collection<Module>(l.Modules.Where(m => m.CourseId == courseId).ToList())
+                }).FirstOrDefault();
         }
 
         public Level SaveLevel(Level level)
