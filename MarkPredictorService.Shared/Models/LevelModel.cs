@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 
@@ -19,7 +20,7 @@ namespace MarkPredictor.Shared.Models
 
         public Level GetLevel(long levelId, long courseId)
         {
-            return _markPredictorDbContext.Level.Include(l => l.Modules).Include(l => l.Modules.Select(a => a.Assessments)).Where(l => l.Id == levelId).ToList().Select(
+            return _markPredictorDbContext.Level.Include(l => l.Modules).Include(l => l.Modules.Select(a => a.Assessments)).Where(l => l.Id == levelId).AsNoTracking().ToList().Select(
                 l => new Level
                 {
                     Id = l.Id,
@@ -34,15 +35,12 @@ namespace MarkPredictor.Shared.Models
             {
                 foreach (var assessment in module.Assessments)
                 {
-                    if (_markPredictorDbContext.Entry(assessment).State != EntityState.Modified)
-                    {
-                        _markPredictorDbContext.Entry(assessment).State = EntityState.Modified;
-                    }
+                    _markPredictorDbContext.Entry(assessment).State = EntityState.Modified;
                     _markPredictorDbContext.Entry(assessment).CurrentValues.SetValues(assessment);
                 }
             }
             _markPredictorDbContext.SaveChanges();
-            DetachedEntites(level);
+            DetachedEntites(level);   
             return level;
         }
 
