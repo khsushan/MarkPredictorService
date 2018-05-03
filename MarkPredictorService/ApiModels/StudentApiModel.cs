@@ -5,7 +5,7 @@ using System.Web;
 
 namespace MarkPredictorService.ApiModels
 {
-    public class StudentApiModel
+    public class StudentApiModel : BaseApiModel
     {
         public long Id { get; set; }
 

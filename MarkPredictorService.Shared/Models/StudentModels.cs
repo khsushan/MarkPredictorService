@@ -15,7 +15,11 @@ namespace MarkPredictor.Shared.Models
         {
             _markPredictorDbContext = markPredictorDbContext;
         }
-
+        /// <summary>
+        /// Validate login from database
+        /// </summary>
+        /// <param name="student">Student entity</param>
+        /// <returns></returns>
         public Student Login(Student student)
         {
             var studentEntity = _markPredictorDbContext.Student.Where(s => s.UserName == student.UserName).FirstOrDefault();
@@ -30,6 +34,11 @@ namespace MarkPredictor.Shared.Models
             return null;
         }
 
+        /// <summary>
+        /// Register student method
+        /// </summary>
+        /// <param name="student">Student entity</param>
+        /// <returns></returns>
         public int AddStudent(Student student)
         {
             student.Password = GetPasswordHash(student.Password);

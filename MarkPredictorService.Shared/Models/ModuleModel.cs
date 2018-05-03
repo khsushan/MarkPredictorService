@@ -13,16 +13,11 @@ namespace MarkPredictor.Shared.Models
             _markPredictorDbContext = markPredictorDbContext;
         }
 
-        public long Id { get; set; }
-
-        public string ModuleName { get; set; }
-
-        public long LevelId { get; set; }
-
-        public long CourseId { get; set; }
-
-        public double Credit { get;  set;}
-
+        /// <summary>
+        /// Save module method
+        /// </summary>
+        /// <param name="module">Module entity</param>
+        /// <returns></returns>    
         public Module Save(Module module)
         {
             _markPredictorDbContext.Module.Add(module);

@@ -12,6 +12,6 @@ namespace MarkPredictorService.Services
         [OperationContract]
         [WebInvoke(UriTemplate = "add", Method = "POST", ResponseFormat = WebMessageFormat.Json, RequestFormat = WebMessageFormat.Json)]
         [OnDeserialized]
-        ModuleApiModel AddModule(ModuleApiModel moduleDto);
+        BaseApiModel AddModule(ModuleApiModel moduleDto);
     }
 }

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace MarkPredictorService.ApiModels
 {
     [DataContract]
-    public class LevelApiModel
+    public class LevelApiModel : BaseApiModel
     {
         [DataMember]
         public long Id { get; set; }

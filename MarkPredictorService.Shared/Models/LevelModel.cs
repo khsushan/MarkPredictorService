@@ -18,6 +18,12 @@ namespace MarkPredictor.Shared.Models
             _markPredictorDbContext = markPredictorDbContext;
         }
 
+        /// <summary>
+        /// Get level details according to given level and course Id
+        /// </summary>
+        /// <param name="levelId"> Level id</param>
+        /// <param name="courseId"> Course Id</param>
+        /// <returns></returns>
         public Level GetLevel(long levelId, long courseId)
         {
             return _markPredictorDbContext.Level.Include(l => l.Modules).Include(l => l.Modules.Select(a => a.Assessments)).Where(l => l.Id == levelId).AsNoTracking().ToList().Select(
@@ -29,7 +35,12 @@ namespace MarkPredictor.Shared.Models
                 }).FirstOrDefault();
         }
 
-        public Level SaveLevel(Level level)
+        /// <summary>
+        ///  Update the given level object
+        /// </summary>
+        /// <param name="level">The level object which is need to be updated</param>
+        /// <returns></returns>
+        public Level UpdateLevel(Level level)
         {
             foreach (var module in level.Modules)
             {
@@ -40,7 +51,7 @@ namespace MarkPredictor.Shared.Models
                 }
             }
             _markPredictorDbContext.SaveChanges();
-            DetachedEntites(level);   
+            DetachedEntites(level);
             return level;
         }
 

@@ -22,7 +22,13 @@ namespace MarkPredictorService.Services
             _studentModel = InstanceFactory.GetStudentModel();
         }
 
-        public StudentApiModel Login(StudentApiModel studentApiModel)
+        /// <summary>
+        ///  Login method
+        /// </summary>
+        /// <param name="studentApiModel"> Loging request object</param>
+        /// <returns></returns>
+
+        public BaseApiModel Login(StudentApiModel studentApiModel)
         {
             var student = _studentModel.Login(Mapper.Map<Student>(studentApiModel));
             if (student != null)
@@ -32,13 +38,18 @@ namespace MarkPredictorService.Services
             return new StudentApiModel() ;
         }
 
+        /// <summary>
+        /// Register service method
+        /// </summary>
+        /// <param name="studentApiModel"> Regisgter requet object</param>
+        /// <returns></returns>
         public int Register(StudentApiModel studentApiModel)
         {
             try
             {
                 return _studentModel.AddStudent(Mapper.Map<Student>(studentApiModel));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return 0;
             }

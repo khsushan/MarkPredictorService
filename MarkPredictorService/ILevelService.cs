@@ -11,15 +11,15 @@ namespace MarkPredictorService
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "IService1" in both code and config file together.
     [ServiceContract]
-    public interface IService
+    public interface ILevelService
     {
         [OperationContract]
         [WebGet( ResponseFormat = WebMessageFormat.Json, UriTemplate = "{levelId}/course/{courseId}")]
-        LevelApiModel GetLevelDetails(string levelId, string courseId);
+        BaseApiModel GetLevelDetails(string levelId, string courseId);
 
         [OperationContract]
         [WebInvoke(UriTemplate = "update", Method = "PUT", ResponseFormat = WebMessageFormat.Json, RequestFormat = WebMessageFormat.Json)]
-        LevelApiModel Update(LevelApiModel level);
+        BaseApiModel Update(LevelApiModel level);
 
         // TODO: Add your service operations here
     }

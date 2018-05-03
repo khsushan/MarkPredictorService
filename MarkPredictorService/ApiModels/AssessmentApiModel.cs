@@ -4,7 +4,7 @@ using System.Runtime.Serialization;
 namespace MarkPredictorService.ApiModels
 {
     [DataContract]
-    public class AssessmentApiModel
+    public class AssessmentApiModel : BaseApiModel
     {
         [DataMember]
         public long Id { get; set; }

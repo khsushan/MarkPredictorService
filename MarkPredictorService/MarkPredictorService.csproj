@@ -110,7 +110,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Service.svc" />
+    <Content Include="LevelService.svc" />
     <Content Include="Services\AccountService.svc" />
     <Content Include="Services\AssessmentService.svc" />
     <Content Include="Services\ModuleService.svc" />
@@ -163,10 +163,10 @@
       <DependentUpon>201804161503178_AddingModuleIdColumntoAssessment.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Service.svc.cs">
-      <DependentUpon>Service.svc</DependentUpon>
+    <Compile Include="LevelService.svc.cs">
+      <DependentUpon>LevelService.svc</DependentUpon>
     </Compile>
-    <Compile Include="IService.cs" />
+    <Compile Include="ILevelService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

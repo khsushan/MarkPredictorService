@@ -17,7 +17,7 @@ namespace MarkPredictorService.App_Code
         public static void AppInitialize()
         {
             WebServiceHost hostLevel = new WebServiceHost(typeof(Service), new Uri(BASE_URL));
-            ServiceEndpoint levelServiceEndpoint = hostLevel.AddServiceEndpoint(typeof(IService), new WebHttpBinding(), "levels/");
+            ServiceEndpoint levelServiceEndpoint = hostLevel.AddServiceEndpoint(typeof(ILevelService), new WebHttpBinding(), "levels/");
             WebServiceHost hostModule = new WebServiceHost(typeof(ModuleService), new Uri(BASE_URL));
             ServiceEndpoint moduleServiceEndpoint = hostModule.AddServiceEndpoint(typeof(IModuleService), new WebHttpBinding(), "modules/");
             WebServiceHost hostAssessment = new WebServiceHost(typeof(AssessmentService), new Uri(BASE_URL));

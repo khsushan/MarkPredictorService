@@ -21,7 +21,12 @@ namespace MarkPredictorService.Services
             _moduleModuel = InstanceFactory.GetModuleModelInstance();
         }
 
-        public ModuleApiModel AddModule(ModuleApiModel moduleDto)
+        /// <summary>
+        /// Add module service
+        /// </summary>
+        /// <param name="moduleDto">Module Dto request</param>
+        /// <returns></returns>
+        public BaseApiModel AddModule(ModuleApiModel moduleDto)
         {
             var module = _moduleModuel.Save(Mapper.Map<Module>(moduleDto));
             moduleDto.Id = module.Id;

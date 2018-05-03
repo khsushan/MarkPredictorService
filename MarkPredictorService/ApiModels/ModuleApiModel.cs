@@ -4,7 +4,7 @@ using System.Runtime.Serialization;
 namespace MarkPredictorService.ApiModels
 {
     [DataContract]
-    public class ModuleApiModel
+    public class ModuleApiModel : BaseApiModel
     {
         public ModuleApiModel()
         {

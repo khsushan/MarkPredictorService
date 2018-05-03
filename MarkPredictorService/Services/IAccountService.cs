@@ -15,7 +15,7 @@ namespace MarkPredictorService.Services
     {
         [OperationContract]
         [WebInvoke(UriTemplate = "login", Method = "POST", ResponseFormat = WebMessageFormat.Json, RequestFormat = WebMessageFormat.Json)]
-        StudentApiModel Login(StudentApiModel studentApiModel);
+        BaseApiModel Login(StudentApiModel studentApiModel);
 
         [OperationContract]
         [WebInvoke(UriTemplate = "register", Method = "POST", ResponseFormat = WebMessageFormat.Json, RequestFormat = WebMessageFormat.Json)]

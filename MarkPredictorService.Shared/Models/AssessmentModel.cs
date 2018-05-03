@@ -24,6 +24,11 @@ namespace MarkPredictor.Shared.Models
             _markPredictorDbContext = markPredictorDbContext;
         }
 
+        /// <summary>
+        /// Add Assessment to database
+        /// </summary>
+        /// <param name="assessment">Assessment which is need to added to the datbase</param>
+        /// <returns></returns>
         public Assessment AddAssessment(Assessment assessment)
         {
             _markPredictorDbContext.Assessment.Add(assessment);
