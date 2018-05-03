@@ -119,9 +119,11 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApiModels\BaseApiModel.cs" />
+    <Compile Include="ApiModels\ErrorResponseAPIModel.cs" />
     <Compile Include="ApiModels\StudentApiModel.cs" />
-    <Compile Include="Migrations\201804301104399_Adding courseId to student table.cs" />
-    <Compile Include="Migrations\201804301104399_Adding courseId to student table.Designer.cs">
+    <Compile Include="Services\Migrations\201804301104399_Adding courseId to student table.cs" />
+    <Compile Include="Services\Migrations\201804301104399_Adding courseId to student table.Designer.cs">
       <DependentUpon>201804301104399_Adding courseId to student table.cs</DependentUpon>
     </Compile>
     <Compile Include="Services\AccountService.svc.cs">
@@ -142,27 +144,27 @@
     <Compile Include="ApiModels\AssessmentApiModel.cs" />
     <Compile Include="ApiModels\LevelApiModel.cs" />
     <Compile Include="ApiModels\ModuleApiModel.cs" />
-    <Compile Include="Migrations\201804101220439_InitialCreate.cs" />
-    <Compile Include="Migrations\201804101220439_InitialCreate.Designer.cs">
+    <Compile Include="Services\Migrations\201804101220439_InitialCreate.cs" />
+    <Compile Include="Services\Migrations\201804101220439_InitialCreate.Designer.cs">
       <DependentUpon>201804101220439_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201804150545045_ChangeingCourseNameDatatypeToString.cs" />
-    <Compile Include="Migrations\201804150545045_ChangeingCourseNameDatatypeToString.Designer.cs">
+    <Compile Include="Services\Migrations\201804150545045_ChangeingCourseNameDatatypeToString.cs" />
+    <Compile Include="Services\Migrations\201804150545045_ChangeingCourseNameDatatypeToString.Designer.cs">
       <DependentUpon>201804150545045_ChangeingCourseNameDatatypeToString.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201804160157189_AddingAssessmentNameField.cs" />
-    <Compile Include="Migrations\201804160157189_AddingAssessmentNameField.Designer.cs">
+    <Compile Include="Services\Migrations\201804160157189_AddingAssessmentNameField.cs" />
+    <Compile Include="Services\Migrations\201804160157189_AddingAssessmentNameField.Designer.cs">
       <DependentUpon>201804160157189_AddingAssessmentNameField.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201804160347210_AddingCreditFieldForModule.cs" />
-    <Compile Include="Migrations\201804160347210_AddingCreditFieldForModule.Designer.cs">
+    <Compile Include="Services\Migrations\201804160347210_AddingCreditFieldForModule.cs" />
+    <Compile Include="Services\Migrations\201804160347210_AddingCreditFieldForModule.Designer.cs">
       <DependentUpon>201804160347210_AddingCreditFieldForModule.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201804161503178_AddingModuleIdColumntoAssessment.cs" />
-    <Compile Include="Migrations\201804161503178_AddingModuleIdColumntoAssessment.Designer.cs">
+    <Compile Include="Services\Migrations\201804161503178_AddingModuleIdColumntoAssessment.cs" />
+    <Compile Include="Services\Migrations\201804161503178_AddingModuleIdColumntoAssessment.Designer.cs">
       <DependentUpon>201804161503178_AddingModuleIdColumntoAssessment.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Services\Migrations\Configuration.cs" />
     <Compile Include="LevelService.svc.cs">
       <DependentUpon>LevelService.svc</DependentUpon>
     </Compile>
@@ -186,22 +188,22 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201804101220439_InitialCreate.resx">
+    <EmbeddedResource Include="Services\Migrations\201804101220439_InitialCreate.resx">
       <DependentUpon>201804101220439_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804150545045_ChangeingCourseNameDatatypeToString.resx">
+    <EmbeddedResource Include="Services\Migrations\201804150545045_ChangeingCourseNameDatatypeToString.resx">
       <DependentUpon>201804150545045_ChangeingCourseNameDatatypeToString.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804160157189_AddingAssessmentNameField.resx">
+    <EmbeddedResource Include="Services\Migrations\201804160157189_AddingAssessmentNameField.resx">
       <DependentUpon>201804160157189_AddingAssessmentNameField.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804160347210_AddingCreditFieldForModule.resx">
+    <EmbeddedResource Include="Services\Migrations\201804160347210_AddingCreditFieldForModule.resx">
       <DependentUpon>201804160347210_AddingCreditFieldForModule.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804161503178_AddingModuleIdColumntoAssessment.resx">
+    <EmbeddedResource Include="Services\Migrations\201804161503178_AddingModuleIdColumntoAssessment.resx">
       <DependentUpon>201804161503178_AddingModuleIdColumntoAssessment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804301104399_Adding courseId to student table.resx">
+    <EmbeddedResource Include="Services\Migrations\201804301104399_Adding courseId to student table.resx">
       <DependentUpon>201804301104399_Adding courseId to student table.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>

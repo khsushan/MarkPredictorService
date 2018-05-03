@@ -13,7 +13,7 @@ namespace MarkPredictorService.Services
         /// </summary>
         /// <param name="assessment">Assessment request </param>
         /// <returns></returns>
-        public BaseApiModel AddAssessment(AssessmentApiModel assessment)
+        public AssessmentApiModel AddAssessment(AssessmentApiModel assessment)
         {
             var assessmentModel = InstanceFactory.GetAssessmentModelInstance();
             var assessmentEntity = assessmentModel.AddAssessment(Mapper.Map<Assessment>(assessment));

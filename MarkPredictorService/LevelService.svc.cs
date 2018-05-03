@@ -14,18 +14,11 @@ namespace MarkPredictorService
         /// <param name="levelId">Level Id</param>
         /// <param name="courseId">Course Id</param>
         /// <returns>level response</returns>
-        public BaseApiModel GetLevelDetails(string levelId, string courseId)
+        public LevelApiModel GetLevelDetails(string levelId, string courseId)
         {
             var levelModel = InstanceFactory.GetLevelModelInstance();
-            try
-            {
-                var levelEntity = levelModel.GetLevel(long.Parse(levelId), long.Parse(courseId));
-                return Mapper.Map<LevelApiModel>(levelEntity);
-            }
-            catch (Exception ex)
-            {
-                return new ErrorResponseAPIModel { ErrorMessage = ex.Message, IsError = true;
-            }
+            var levelEntity = levelModel.GetLevel(long.Parse(levelId), long.Parse(courseId));
+            return Mapper.Map<LevelApiModel>(levelEntity);
         }
 
         /// <summary>
@@ -33,18 +26,11 @@ namespace MarkPredictorService
         /// </summary>
         /// <param name="level"> lever object</param>
         /// <returns>updated response</returns>
-        public BaseApiModel Update(LevelApiModel level)
+        public LevelApiModel Update(LevelApiModel level)
         {
             var levelModel = InstanceFactory.GetLevelModelInstance();
-            try
-            {
-                var updatedLevel = levelModel.UpdateLevel(Mapper.Map<Level>(level));
-                return Mapper.Map<LevelApiModel>(updatedLevel);
-            }
-            catch (Exception ex)
-            {
-                return new ErrorResponseAPIModel { ErrorMessage = ex.Message, IsError = true;
-            }
+            var updatedLevel = levelModel.UpdateLevel(Mapper.Map<Level>(level));
+            return Mapper.Map<LevelApiModel>(updatedLevel);
         }
 
     }

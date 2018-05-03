@@ -28,7 +28,7 @@ namespace MarkPredictorService.Services
         /// <param name="studentApiModel"> Loging request object</param>
         /// <returns></returns>
 
-        public BaseApiModel Login(StudentApiModel studentApiModel)
+        public StudentApiModel Login(StudentApiModel studentApiModel)
         {
             var student = _studentModel.Login(Mapper.Map<Student>(studentApiModel));
             if (student != null)

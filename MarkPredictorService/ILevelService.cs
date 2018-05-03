@@ -15,12 +15,10 @@ namespace MarkPredictorService
     {
         [OperationContract]
         [WebGet( ResponseFormat = WebMessageFormat.Json, UriTemplate = "{levelId}/course/{courseId}")]
-        BaseApiModel GetLevelDetails(string levelId, string courseId);
+        LevelApiModel GetLevelDetails(string levelId, string courseId);
 
         [OperationContract]
         [WebInvoke(UriTemplate = "update", Method = "PUT", ResponseFormat = WebMessageFormat.Json, RequestFormat = WebMessageFormat.Json)]
-        BaseApiModel Update(LevelApiModel level);
-
-        // TODO: Add your service operations here
+        LevelApiModel Update(LevelApiModel level);
     }
 }

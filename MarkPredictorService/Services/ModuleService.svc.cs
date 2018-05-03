@@ -26,7 +26,7 @@ namespace MarkPredictorService.Services
         /// </summary>
         /// <param name="moduleDto">Module Dto request</param>
         /// <returns></returns>
-        public BaseApiModel AddModule(ModuleApiModel moduleDto)
+        public ModuleApiModel AddModule(ModuleApiModel moduleDto)
         {
             var module = _moduleModuel.Save(Mapper.Map<Module>(moduleDto));
             moduleDto.Id = module.Id;

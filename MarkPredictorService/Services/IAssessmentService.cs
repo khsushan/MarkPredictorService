@@ -10,6 +10,6 @@ namespace MarkPredictorService.Services
     {
         [OperationContract]
         [WebInvoke(UriTemplate = "add", Method = "POST", ResponseFormat = WebMessageFormat.Json, RequestFormat = WebMessageFormat.Json)]
-        BaseApiModel AddAssessment(AssessmentApiModel assessment);
+        AssessmentApiModel AddAssessment(AssessmentApiModel assessment);
     }
 }
